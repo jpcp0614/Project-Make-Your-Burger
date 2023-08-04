@@ -1,0 +1,109 @@
+{
+  "ingredients": {
+    "breads": [
+      {
+        "id": 1,
+        "type": "Italiano Branco"
+      },
+      {
+        "id": 2,
+        "type": "3 Queijos"
+      },
+      {
+        "id": 3,
+        "type": "Parmesão e Orégano"
+      },
+      {
+        "id": 4,
+        "type": "Integral"
+      },
+      {
+        "id": 5,
+        "type": "9 Grãos"
+      }
+    ],
+    "meats": [
+      {
+        "id": 1,
+        "type": "Maminha"
+      },
+      {
+        "id": 2,
+        "type": "Alcatra"
+      },
+      {
+        "id": 3,
+        "type": "Picanha"
+      },
+      {
+        "id": 4,
+        "type": "Frango"
+      },
+      {
+        "id": 5,
+        "type": "Carne Seca"
+      },
+      {
+        "id": 6,
+        "type": "Presunto"
+      },
+      {
+        "id": 7,
+        "type": "Veggie Burger"
+      }
+    ],
+    "optionals": [
+      {
+        "id": 1,
+        "type": "Bacon"
+      },
+      {
+        "id": 2,
+        "type": "Cheddar"
+      },
+      {
+        "id": 3,
+        "type": "Salame"
+      },
+      {
+        "id": 4,
+        "type": "Tomate"
+      },
+      {
+        "id": 5,
+        "type": "Cebola Roxa"
+      },
+      {
+        "id": 6,
+        "type": "Picles"
+      },
+      {
+        "id": 7,
+        "type": "Teriyaki"
+      },
+      {
+        "id": 8,
+        "type": "Molho Supreme"
+      },
+      {
+        "id": 9,
+        "type": "Cream Cheese"
+      }
+    ]
+  },
+  "status": [
+    {
+      "id": 1,
+      "type": "Solicitado"
+    },
+    {
+      "id": 2,
+      "type": "Em Produção"
+    },
+    {
+      "id": 3,
+      "type": "Finalizado"
+    }
+  ],
+  "burgers": []
+}

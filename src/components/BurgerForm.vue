@@ -44,7 +44,52 @@
 
 <script>
 
-const url = 'http://localhost:3000/ingredients';
+const urlData = 'http://localhost:3000/ingredients';
+const urlBurgers = 'http://localhost:3000/burgers';
+
+//* -------- Methods --------
+
+//* pego os dados do json
+async function getIngredients() {
+  const req = await fetch(urlData);
+  const data = await req.json();
+
+  this.breads = data.breads;
+  this.meats = data.meats;
+  this.optional_data = data.optionals;
+}
+
+//* pegar os dados do form para enviar ao servidor
+async function createBurger(e) {
+  e.preventDefault();
+
+  const data = {
+    name: this.name_client,
+    bread: this.bread,
+    meat: this.meat,
+    optionals: Array.from(this.optionals),
+    status: "Solicitado",
+  }
+  // console.log(data);
+  //* transformar os dados num texto
+  const dataJson = JSON.stringify(data);
+  
+  const req = await fetch(urlBurgers, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: dataJson
+  });
+
+  const res = await req.json();
+
+  //* colocar mensagem de sistema
+
+  //* limpar os campos após enviar
+  this.name_client = "";
+  this.bread = "";
+  this.meat = "";
+  this.optionals = "";
+}
 
 export default {
   name: "BurgerForm",
@@ -66,26 +111,8 @@ export default {
     }
   },
   methods: {
-    async getIngredients() { //* pego os dados do json
-      const req = await fetch(url);
-      const data = await req.json();
-
-      this.breads = data.breads;
-      this.meats = data.meats;
-      this.optional_data = data.optionals;
-    },
-    async createBurger(e) { //* pegar os dados do form para enviar ao servidor
-      e.preventDefault();
-
-      const data = {
-        name: this.name_client,
-        bread: this.bread,
-        meat: this.meat,
-        optionals: Array.from(this.optionals),
-        status: "Solicitado",
-      }
-      console.log(data);
-    }
+    getIngredients,
+    createBurger,
   },
   mounted() {
     this.getIngredients();

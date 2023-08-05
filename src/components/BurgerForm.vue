@@ -66,7 +66,7 @@ export default {
     }
   },
   methods: {
-    async getIngredients() {
+    async getIngredients() { //* pego os dados do json
       const req = await fetch(url);
       const data = await req.json();
 
@@ -74,7 +74,7 @@ export default {
       this.meats = data.meats;
       this.optional_data = data.optionals;
     },
-    async createBurger(e) {
+    async createBurger(e) { //* pegar os dados do form para enviar ao servidor
       e.preventDefault();
 
       const data = {

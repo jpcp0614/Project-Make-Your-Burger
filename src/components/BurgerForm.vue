@@ -21,7 +21,7 @@
           <label for="carne">Escolha a carne:</label>
           <select name="carne" id="carne" v-model="pao">
             <option value="">Selecione o tipo de carne</option>
-            <option value="maminha">Maminha</option>
+            <option v-for="meat in meats" :key="meat.id" :value="meat.type">{{ meat.type }}</option>
           </select>
         </div>
 

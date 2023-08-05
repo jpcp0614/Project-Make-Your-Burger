@@ -13,7 +13,7 @@
           <label for="pao">Escolha o pão:</label>
           <select name="pao" id="pao" v-model="pao">
             <option value="">Selecione o seu pão</option>
-            <option value="integral">Integral</option>
+            <option v-for="bread in breads" :key="bread.id" :value="bread.type">{{ bread.type }}</option>
           </select>
         </div>
 

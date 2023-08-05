@@ -20,7 +20,6 @@
     display: flex;
     justify-content: center;
     height: 80px;
-    position: absolute;
     width: 100%;
   }
 </style>

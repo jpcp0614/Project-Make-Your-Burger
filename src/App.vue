@@ -1,5 +1,5 @@
 <template>
-  <Navbar />
+  <Navbar :logo="logo_src" :alt="app_name"/>
   <router-view/>
   <Footer />
 </template>
@@ -13,6 +13,12 @@
     components: {
       Navbar,
       Footer,
+    },
+    data() {
+      return {
+        logo_src: '/img/logo.png',
+        app_name: 'Make Your Burger',
+      }
     }
   }
 </script>

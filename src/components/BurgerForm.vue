@@ -120,11 +120,18 @@ export default {
     align-items: flex-start;
     display: flex;
     margin-bottom: 20px;
-    width: 42%;
+    margin-left: 50px;
+    width: 100%;
+  }
+
+  .checkbox-container span,
+  .checkbox-container input {
+    width: auto;
   }
 
   .checkbox-container span {
     font-weight: bold;
+    margin-left: 6px;
   }
 
   .submit-btn {

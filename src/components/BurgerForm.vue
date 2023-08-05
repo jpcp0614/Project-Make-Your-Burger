@@ -2,24 +2,24 @@
   <div>
     <p>Componente de mensagem</p>
     <div>
-      <form id="burger-form">
+      <form id="burger-form" @submit="createBurger">
 
         <div class="input-container">
-          <label for="nome">Nome do cliente:</label>
-          <input type="text" id="nome" name="nome" v-model="nome" placeholder="Digite seu nome aqui">
+          <label for="name-id">Nome do cliente:</label>
+          <input type="text" id="name-id" name="name" v-model="name_client" placeholder="Digite seu nome aqui">
         </div>
   
         <div class="input-container">
-          <label for="pao">Escolha o pão:</label>
-          <select name="pao" id="pao" v-model="pao">
+          <label for="bread-id">Escolha o pão:</label>
+          <select name="bread-name" id="bread-id" v-model="bread">
             <option value="">Selecione o seu pão</option>
             <option v-for="bread in breads" :key="bread.id" :value="bread.type">{{ bread.type }}</option>
           </select>
         </div>
 
         <div class="input-container">
-          <label for="carne">Escolha a carne:</label>
-          <select name="carne" id="carne" v-model="pao">
+          <label for="meat-id">Escolha a carne:</label>
+          <select name="meat-name" id="meat-id" v-model="meat">
             <option value="">Selecione o tipo de carne</option>
             <option v-for="meat in meats" :key="meat.id" :value="meat.type">{{ meat.type }}</option>
           </select>
@@ -28,7 +28,7 @@
         <div id="opcionais-container" class="input-container">
           <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
           <div class="checkbox-container" v-for="optional in optional_data" :key="optional.id">
-            <input type="checkbox" name="opcionais" v-model="opcionais" :value="optional.type">
+            <input type="checkbox" name="optionals-name" v-model="optionals" :value="optional.type">
             <span>{{ optional.type }}</span>
           </div>
         </div>
@@ -50,15 +50,19 @@ export default {
   name: "BurgerForm",
   data() {
     return {
-      breads: null,
+      //* json data
+      breads: null, 
       meats: null,
       optional_data: null,
+      //* ----------------
+
+      //* enviar para o backend
       name_client: null,
       bread: null,
       meat: null,
       optionals: [],
-      status: 'Solicitado',
       msg: null,
+      //* ----------------
     }
   },
   methods: {
@@ -69,6 +73,18 @@ export default {
       this.breads = data.breads;
       this.meats = data.meats;
       this.optional_data = data.optionals;
+    },
+    async createBurger(e) {
+      e.preventDefault();
+
+      const data = {
+        name: this.name_client,
+        bread: this.bread,
+        meat: this.meat,
+        optionals: Array.from(this.optionals),
+        status: "Solicitado",
+      }
+      console.log(data);
     }
   },
   mounted() {

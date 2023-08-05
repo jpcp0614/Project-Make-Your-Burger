@@ -25,8 +25,8 @@
           </select>
         </div>
 
-        <div class="input-container">
-          <label for="opcionais">Selecione os opcionais:</label>
+        <div id="opcionais-container" class="input-container">
+          <label id="opcionais-title" for="opcionais">Selecione os opcionais:</label>
           <div class="checkbox-container">
             <input type="checkbox" name="opcionais" v-model="opcionais" value="salame">
             <span>Salame</span>
@@ -49,5 +49,70 @@ export default {
 </script>
 
 <style scoped>
+
+  #burger-form {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    max-width: 400px;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+  }
+
+  label {
+    border-left: 4px solid #FCBA03;
+    color: #222;
+    font-weight: bold;
+    margin-bottom: 15px;
+    padding: 5px 10px;
+  }
+
+  input, select {
+    padding: 5px 10px;
+    width: 300px;
+  }
+
+  #opcionais-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  #opcionais-title {
+    margin: 0 0 20px 50px;
+    width: 100%;
+  }
+
+  .checkbox-container {
+    align-items: flex-start;
+    display: flex;
+    margin-bottom: 20px;
+    width: 42%;
+  }
+
+  .checkbox-container span {
+    font-weight: bold;
+  }
+
+  .submit-btn {
+    background-color: #222;
+    color: #FCBA03;
+    font-weight: bold;
+    border: 3px solid #222;
+    padding: 10px;
+    font-size: 16px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: .5s;
+  }
+
+  .submit-btn:hover {
+    background-color: transparent;
+    color: #222;
+  }
 
 </style>

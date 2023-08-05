@@ -32,6 +32,8 @@
   }
 
   #logo-img {
+    filter: brightness(90%);
+    filter: contrast(80%);
     height: 40px;
     width: 40px;
   }
@@ -46,6 +48,7 @@
     font-size: 22px;
     margin: 5px 10px 5px 10px;
     text-decoration: none; /* remove o underline */
+    text-shadow: black 0.1em 0.1em 0.2em;
     transition: 0.4s;
   }
 

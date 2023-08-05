@@ -1,6 +1,6 @@
 <template>
   <div id="main-banner">
-    <h1 class="line">Make Your Burger</h1>
+    <h1>Make Your Burger</h1>
   </div>
 </template>
 
@@ -27,6 +27,7 @@
     padding: 20px 40px;
     position: relative;
     text-align: center;
+    text-shadow: black 0.1em 0.1em 0.2em;
   }
 
   /* com auxílio do chatgpt */

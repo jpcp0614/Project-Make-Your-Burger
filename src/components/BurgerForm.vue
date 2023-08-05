@@ -43,6 +43,9 @@
 </template>
 
 <script>
+
+const url = 'http://localhost:3000/ingredients';
+
 export default {
   name: "BurgerForm",
   data() {
@@ -57,6 +60,19 @@ export default {
       status: 'Solicitado',
       msg: null,
     }
+  },
+  methods: {
+    async getIngredients() {
+      const req = await fetch(url);
+      const data = await req.json();
+
+      this.breads = data.breads;
+      this.meats = data.meats;
+      this.optional_data = data.optionals;
+    }
+  },
+  mounted() {
+    this.getIngredients();
   }
 }
 </script>

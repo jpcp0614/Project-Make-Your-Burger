@@ -45,6 +45,19 @@
 <script>
 export default {
   name: "BurgerForm",
+  data() {
+    return {
+      breads: null,
+      meats: null,
+      optional_data: null,
+      name_client: null,
+      bread: null,
+      meat: null,
+      optionals: [],
+      status: 'Solicitado',
+      msg: null,
+    }
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <p>Componente de mensagem</p>
+    <Message :msg="msg" v-show="msg"/>
     <div>
       <form id="burger-form" @submit="createBurger">
 
@@ -44,6 +44,8 @@
 
 <script>
 
+import Message from './Message';
+
 const urlData = 'http://localhost:3000/ingredients';
 const urlBurgers = 'http://localhost:3000/burgers';
 
@@ -83,6 +85,10 @@ async function createBurger(e) {
   const res = await req.json();
 
   //* colocar mensagem de sistema
+  this.msg = `Pedido Nº ${res.id} realizado com sucesso!`
+
+  //* limpar msg
+  setTimeout(() => this.msg = '', 3000);
 
   //* limpar os campos após enviar
   this.name_client = "";
@@ -93,6 +99,9 @@ async function createBurger(e) {
 
 export default {
   name: "BurgerForm",
+  components: {
+    Message,
+  },
   data() {
     return {
       //* json data

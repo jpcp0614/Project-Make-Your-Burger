@@ -105,5 +105,20 @@
       "type": "Finalizado"
     }
   ],
-  "burgers": []
+  "burgers": [
+    {
+      "name": "Jhon",
+      "bread": "3 Queijos",
+      "meat": "Frango",
+      "optionals": [
+        "Bacon",
+        "Tomate",
+        "Cebola Roxa",
+        "Molho Supreme",
+        "Cream Cheese"
+      ],
+      "status": "Solicitado",
+      "id": 1
+    }
+  ]
 }
